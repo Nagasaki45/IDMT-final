@@ -1,4 +1,4 @@
-#N canvas 622 430 901 504 10;
+#N canvas 450 264 901 504 10;
 #X obj 19 18 inlet;
 #X text 63 17 List of sampler playing params;
 #X obj 19 253 line~;
@@ -38,7 +38,7 @@
 #X obj 339 247 s \$0-var;
 #X obj 38 355 s \$0-env;
 #X obj 343 295 r \$0-env;
-#N canvas 99 187 360 538 calc_line 0;
+#N canvas 96 205 360 538 calc_line 0;
 #X obj 17 114 int;
 #X msg 17 481 0 \, \$1 \$2;
 #X obj 17 453 pack;
@@ -95,18 +95,16 @@
 #X restore 19 178 pd calc_line;
 #X obj 524 199 bng 13 250 50 0 empty empty Reset 17 7 0 10 -262144
 -1 -1;
-#X obj 411 216 cnv 15 162 119 empty \$0-canvas empty 20 12 0 14 -228992
+#X obj 411 216 cnv 15 162 119 empty \$0-canvas empty 20 12 0 14 -225280
 -66577 0;
-#N canvas 0 98 450 250 (subpatch) 0;
+#X obj 416 317 hsl 135 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 11871 1;
+#X obj 556 234 vsl 15 95 0 1 0 0 empty empty Vol -2 -9 0 10 -262144
+-1 -1 9400 1;
+#N canvas 0 116 450 250 (subpatch) 0;
 #X array \$0-buffer 43302 float 2;
 #X coords 0 1 43302 -1 140 80 1 0 0;
 #X restore 413 232 graph;
-#X obj 556 234 vsl 15 95 0 1 0 0 empty empty Vol -2 -9 0 10 -262144
--1 -1 9400 1;
-#X obj 416 317 hsl 135 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X obj 411 216 cnv 15 80 15 empty \$0-canvas empty 20 12 0 14 -228992
--66577 0;
 #X connect 0 0 24 0;
 #X connect 2 0 6 0;
 #X connect 4 0 7 0;
@@ -142,7 +140,7 @@
 #X connect 28 0 25 0;
 #X connect 29 0 27 0;
 #X connect 31 0 10 1;
-#X connect 35 0 41 0;
+#X connect 35 0 39 0;
 #X connect 36 0 2 0;
 #X connect 37 0 29 0;
 #X connect 40 0 30 0;

@@ -1,0 +1,14 @@
+samples/pocket04.wav
+samples/pocket09.wav
+samples/hh.wav
+samples/kick.wav
+samples/pocket10.wav
+samples/pocket08.wav
+samples/pocket06.wav
+samples/noise.wav
+samples/clap.wav
+samples/pocket02.wav
+samples/pocket01.wav
+samples/pocket07.wav
+samples/pocket03.wav
+samples/pocket05.wav
