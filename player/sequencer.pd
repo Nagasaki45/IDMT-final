@@ -1,4 +1,4 @@
-#N canvas 0 458 566 495 10;
+#N canvas 0 494 646 495 10;
 #X obj 222 167 cnv 15 72 19 empty empty empty 20 12 0 14 -99865 -66577
 0;
 #X obj 77 167 cnv 15 72 19 empty empty empty 20 12 0 14 -99865 -66577
@@ -7,13 +7,13 @@
 1;
 #X obj 78 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 132 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 132 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 114 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 114 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 169 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 151 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 151 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 205 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -21,7 +21,7 @@
 1;
 #X obj 241 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 223 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 223 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 277 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -31,11 +31,11 @@
 1;
 #X obj 296 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 350 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 350 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 332 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 51 38 inlet;
+#X obj 431 17 inlet;
 #X obj 51 206 sel 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
 #X obj 155 439 outlet;
 #X obj 60 242 int;
@@ -54,8 +54,7 @@
 #X obj 296 262 int;
 #X obj 314 282 int;
 #X obj 332 302 int;
-#X text 91 39 Step number;
-#N canvas 0 170 450 448 randomizer 0;
+#N canvas 0 188 450 448 randomizer 0;
 #X obj 49 159 until;
 #X msg 49 135 16;
 #X obj 49 183 t b b;
@@ -98,12 +97,14 @@
 #X obj 431 149 bng 15 250 50 0 empty empty Randomize -60 7 0 10 -262144
 -1 -1;
 #X obj 434 169 hsl 50 15 0 1 0 0 empty empty Density -63 7 0 10 -262144
--1 -1 0 1;
+-1 -1 1960 1;
 #X obj 491 95 loadbang;
 #X text 222 71 Make it curvey;
 #X msg 491 118 0.4;
 #X obj 166 71 pow 1.3;
 #X obj 155 414 sel 1;
+#X text 241 18 Step number or "randomize";
+#X obj 431 42 route randomize density;
 #X connect 2 0 22 1;
 #X connect 3 0 21 1;
 #X connect 4 0 24 1;
@@ -120,7 +121,7 @@
 #X connect 15 0 33 1;
 #X connect 16 0 36 1;
 #X connect 17 0 35 1;
-#X connect 18 0 19 0;
+#X connect 18 0 48 0;
 #X connect 19 0 21 0;
 #X connect 19 1 22 0;
 #X connect 19 2 23 0;
@@ -137,43 +138,46 @@
 #X connect 19 13 34 0;
 #X connect 19 14 35 0;
 #X connect 19 15 36 0;
-#X connect 21 0 47 0;
-#X connect 22 0 47 0;
-#X connect 23 0 47 0;
-#X connect 24 0 47 0;
-#X connect 25 0 47 0;
-#X connect 26 0 47 0;
-#X connect 27 0 47 0;
-#X connect 28 0 47 0;
-#X connect 29 0 47 0;
-#X connect 30 0 47 0;
-#X connect 31 0 47 0;
-#X connect 32 0 47 0;
-#X connect 33 0 47 0;
-#X connect 34 0 47 0;
-#X connect 35 0 47 0;
-#X connect 36 0 47 0;
-#X connect 38 0 39 0;
-#X connect 39 0 3 0;
-#X connect 39 1 2 0;
-#X connect 39 2 5 0;
-#X connect 39 3 4 0;
-#X connect 39 4 7 0;
-#X connect 39 5 6 0;
-#X connect 39 6 9 0;
-#X connect 39 7 8 0;
-#X connect 39 8 11 0;
-#X connect 39 9 10 0;
-#X connect 39 10 13 0;
-#X connect 39 11 12 0;
-#X connect 39 12 15 0;
-#X connect 39 13 14 0;
-#X connect 39 14 17 0;
-#X connect 39 15 16 0;
-#X connect 41 0 38 0;
-#X connect 42 0 46 0;
-#X connect 43 0 45 0;
-#X connect 45 0 42 0;
-#X connect 46 0 38 1;
-#X connect 47 0 20 0;
+#X connect 21 0 46 0;
+#X connect 22 0 46 0;
+#X connect 23 0 46 0;
+#X connect 24 0 46 0;
+#X connect 25 0 46 0;
+#X connect 26 0 46 0;
+#X connect 27 0 46 0;
+#X connect 28 0 46 0;
+#X connect 29 0 46 0;
+#X connect 30 0 46 0;
+#X connect 31 0 46 0;
+#X connect 32 0 46 0;
+#X connect 33 0 46 0;
+#X connect 34 0 46 0;
+#X connect 35 0 46 0;
+#X connect 36 0 46 0;
+#X connect 37 0 38 0;
+#X connect 38 0 3 0;
+#X connect 38 1 2 0;
+#X connect 38 2 5 0;
+#X connect 38 3 4 0;
+#X connect 38 4 7 0;
+#X connect 38 5 6 0;
+#X connect 38 6 9 0;
+#X connect 38 7 8 0;
+#X connect 38 8 11 0;
+#X connect 38 9 10 0;
+#X connect 38 10 13 0;
+#X connect 38 11 12 0;
+#X connect 38 12 15 0;
+#X connect 38 13 14 0;
+#X connect 38 14 17 0;
+#X connect 38 15 16 0;
+#X connect 40 0 37 0;
+#X connect 41 0 45 0;
+#X connect 42 0 44 0;
+#X connect 44 0 41 0;
+#X connect 45 0 37 1;
+#X connect 46 0 20 0;
+#X connect 48 0 40 0;
+#X connect 48 1 41 0;
+#X connect 48 2 19 0;
 #X coords 0 -1 1 1 416 44 1 74 145;

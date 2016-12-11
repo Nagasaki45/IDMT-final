@@ -1,29 +1,37 @@
-#N canvas 276 255 1366 670 10;
-#X obj 512 582 hsl 128 15 0 1 0 0 empty empty Main_output -2 -8 0 10
--262144 -1 -1 0 1;
-#X obj 491 607 *~;
-#X obj 491 650 dac~;
-#N canvas 70 257 450 300 phase_to_step 0;
-#X obj 12 37 * 4;
-#X obj 12 89 int;
-#X obj 12 116 change;
-#X obj 12 14 inlet;
-#X text 56 13 Convert ableton link phase counter to 16 steps sequence
-number;
-#X obj 12 143 outlet;
-#X obj 12 63 t b f;
-#X connect 0 0 6 0;
+#N canvas 258 213 1366 867 10;
+#X obj 145 276 8seq;
+#X obj 573 276 8kit;
+#N canvas 0 134 906 316 ezdac 0;
+#X obj 282 89 hsl 128 30 0 1 0 0 empty empty empty -2 -8 0 10 -257985
+-1 -1 5800 1;
+#X obj 261 126 *~;
+#X obj 261 152 dac~;
+#X msg 246 175 \; pd dsp \$1;
+#X obj 246 89 tgl 30 0 empty empty empty 32 7 0 10 -24198 -33289 -33289
+1 1;
+#X obj 89 212 sel 0;
+#X msg 121 239 color 16 12 12;
+#X msg 89 267 color 13 12 12;
+#X text 132 211 16 = green. 13 = red. 12 = black. Positions are background
+front label.;
+#X obj 261 50 inlet~;
+#X text 259 24 Nice mono DAC with master volume;
+#X obj 25 236 loadbang;
+#X connect 0 0 1 1;
+#X connect 1 0 2 1;
 #X connect 1 0 2 0;
-#X connect 2 0 5 0;
-#X connect 3 0 0 0;
-#X connect 6 0 1 0;
-#X connect 6 1 1 1;
-#X restore 63 71 pd phase_to_step;
-#X floatatom 63 99 5 0 0 0 - - -, f 5;
-#X obj 20 44 abl_link~ 1 0 4 120;
-#X obj 63 125 8seq;
-#X obj 491 125 8kit;
-#N canvas 612 337 531 423 random_loader 0;
+#X connect 4 0 3 0;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;
+#X connect 5 1 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 9 0 1 0;
+#X connect 11 0 7 0;
+#X coords 0 -1 1 1 176 54 1 241 70;
+#X restore 573 638 pd ezdac;
+#N canvas 376 371 1245 709 control 0;
+#N canvas 597 427 531 423 random_loader 0;
 #X obj 87 379 outlet;
 #X obj 29 39 inlet;
 #X obj 110 242 textfile;
@@ -75,19 +83,141 @@ An "sampler X" message loads random sample to sampler X.;
 #X connect 10 0 13 0;
 #X connect 12 0 8 0;
 #X connect 13 0 0 0;
-#X restore 491 93 pd random_loader;
-#X msg 491 59 all;
-#X floatatom 534 40 5 0 0 0 - - -, f 5;
-#X msg 534 59 sampler \$1;
-#X connect 0 0 1 1;
-#X connect 1 0 2 1;
+#X restore 1071 635 pd random_loader;
+#X msg 1036 461 all;
+#X msg 1071 461 sampler \$1;
+#X msg 863 287 tempo \$1;
+#X obj 219 662 outlet;
+#X text 219 680 To 8seq track controls;
+#X obj 863 314 outlet;
+#X text 863 332 To 8seq transport control;
+#X obj 1071 662 outlet;
+#X text 1071 680 To 8kit control;
+#X obj 863 84 loadbang;
+#X obj 862 151 nbx 4 30 40 260 0 0 empty empty Tempo 92 15 0 20 -262144
+-1 -1 109 256;
+#X obj 1071 438 int 0;
+#X obj 219 306 random_banger;
+#X obj 219 347 random 8;
+#X msg 219 387 \$1 randomize;
+#X obj 307 84 loadbang;
+#X msg 342 115 10;
+#X obj 353 353 uzi 8;
+#X msg 353 627 \$1 density \$2;
+#X obj 353 604 pack f f;
+#X obj 353 312 t b f;
+#X obj 433 447 *;
+#X obj 419 312 t b f;
+#X obj 433 472 t b f;
+#X msg 433 498 1;
+#X obj 433 527 -;
+#X obj 406 582 *;
+#X obj 433 418 / 7;
+#X obj 353 380 t f f;
+#X obj 857 186 cnv 15 304 90 empty empty ----------Samples_loader----------
+20 12 0 14 -204786 -66577 0;
+#X obj 1103 241 nbx 2 30 0 7 0 0 empty empty empty 56 15 0 20 -262144
+-1 -1 1 256;
+#X obj 863 206 bng 30 250 50 0 empty empty Randomize_all 32 15 0 20
+-262144 -1 -1;
+#X obj 863 241 bng 30 250 50 0 empty empty Randomize_sampler 32 15
+0 20 -262144 -1 -1;
+#X obj 304 156 cnv 15 366 120 empty empty ----------Pattern_designer----------
+20 12 0 14 -204800 -66577 0;
+#X obj 307 206 nbx 4 30 0.1 60 0 0 empty empty Pattern_gen_period 92
+12 0 20 -262144 -1 -1 10 256;
+#X obj 307 173 tgl 30 0 empty empty Pattern_randomizer_on_/_off 32
+15 0 20 -262144 -1 -1 1 1;
+#X obj 379 221 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 397 225 Randomize a pattern every X seconds;
+#X obj 311 252 hsl 100 20 0 1 0 0 empty empty Density -2 -8 0 10 -262144
+-1 -1 4900 1;
+#X obj 422 252 hsl 100 20 0 1 0 0 empty empty Curve -2 -8 0 10 -262144
+-1 -1 9900 1;
+#X msg 877 117 100;
+#X text 490 556 Make the curve curvey :);
+#X obj 433 554 pow 1.5;
+#X obj 686 357 uzi 8;
+#X obj 686 383 pack f f;
+#X obj 686 316 t b f;
+#X obj 673 156 cnv 15 180 120 empty empty ---Samplers_pitch-- 20 12
+0 14 -261682 -66577 0;
+#X msg 686 406 \$1 rate \$2;
+#X obj 774 358 uzi 8;
+#X obj 774 384 pack f f;
+#X obj 774 317 t b f;
+#X msg 774 407 \$1 var \$2;
+#X obj 687 250 hsl 100 20 0 4 0 0 empty empty Variance -2 -8 0 10 -262144
+-1 -1 1200 1;
+#X obj 688 198 hsl 100 20 0 6 0 0 empty empty Rate -2 -8 0 10 -262144
+-1 -1 1450 1;
+#X obj 792 198 bng 20 250 50 0 empty empty reset 22 10 0 10 -262144
+-1 -1;
+#X obj 791 250 bng 20 250 50 0 empty empty reset 22 10 0 10 -262144
+-1 -1;
+#X msg 761 179 1;
+#X msg 759 231 0;
+#X connect 0 0 8 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 6 0;
+#X connect 10 0 32 0;
+#X connect 10 0 41 0;
+#X connect 11 0 3 0;
+#X connect 12 0 2 0;
+#X connect 13 0 14 0;
+#X connect 13 0 37 0;
+#X connect 14 0 15 0;
+#X connect 15 0 4 0;
+#X connect 16 0 17 0;
+#X connect 16 0 36 0;
+#X connect 17 0 35 0;
+#X connect 18 0 29 0;
+#X connect 19 0 4 0;
+#X connect 20 0 19 0;
+#X connect 21 0 18 0;
+#X connect 21 1 27 1;
+#X connect 22 0 24 0;
+#X connect 23 0 18 0;
+#X connect 23 1 22 1;
+#X connect 24 0 25 0;
+#X connect 24 1 26 1;
+#X connect 25 0 26 0;
+#X connect 26 0 43 0;
+#X connect 27 0 20 1;
+#X connect 28 0 22 0;
+#X connect 29 0 20 0;
+#X connect 29 1 28 0;
+#X connect 31 0 12 1;
+#X connect 32 0 1 0;
+#X connect 33 0 12 0;
+#X connect 35 0 13 1;
+#X connect 36 0 13 0;
+#X connect 39 0 21 0;
+#X connect 40 0 23 0;
+#X connect 41 0 11 0;
+#X connect 43 0 27 0;
+#X connect 44 0 45 0;
+#X connect 45 0 48 0;
+#X connect 46 0 44 0;
+#X connect 46 1 45 1;
+#X connect 48 0 8 0;
+#X connect 49 0 50 0;
+#X connect 50 0 52 0;
+#X connect 51 0 49 0;
+#X connect 51 1 50 1;
+#X connect 52 0 8 0;
+#X connect 53 0 51 0;
+#X connect 54 0 46 0;
+#X connect 55 0 57 0;
+#X connect 56 0 58 0;
+#X connect 57 0 54 0;
+#X connect 58 0 53 0;
+#X coords 0 -1 1 1 865 140 1 300 140;
+#X restore 145 127 pd control;
+#X connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X connect 3 0 4 0;
-#X connect 4 0 6 0;
-#X connect 5 1 3 0;
-#X connect 6 0 7 0;
-#X connect 7 0 1 0;
-#X connect 8 0 7 0;
-#X connect 9 0 8 0;
-#X connect 10 0 11 0;
-#X connect 11 0 8 0;
+#X connect 3 0 0 0;
+#X connect 3 1 0 1;
+#X connect 3 2 1 0;
