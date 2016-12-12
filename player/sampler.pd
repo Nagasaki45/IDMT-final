@@ -1,4 +1,4 @@
-#N canvas 611 1314 901 504 10;
+#N canvas 462 264 901 504 10;
 #X obj 136 18 inlet;
 #X text 180 17 List of sampler playing params;
 #X obj 19 253 line~;
@@ -25,7 +25,7 @@
 #X msg 177 220 read -resize \$1 \$2;
 #X obj 177 188 pack s s;
 #X obj 177 120 t a b;
-#X floatatom 413 181 5 0 6 1 Rate - #0-rate, f 5;
+#X floatatom 413 181 5 0.2 6 1 Rate - #0-rate, f 5;
 #X obj 524 182 bng 13 250 50 0 empty empty Reset 17 7 0 10 -262144
 -1 -1;
 #X floatatom 413 198 5 0 4 1 Variance - #0-var, f 5;
@@ -91,15 +91,15 @@
 #X restore 19 178 pd calc_line;
 #X obj 524 199 bng 13 250 50 0 empty empty Reset 17 7 0 10 -262144
 -1 -1;
-#X obj 411 216 cnv 15 162 119 empty \$0-canvas empty 20 12 0 14 -261689
+#X obj 411 216 cnv 15 162 119 empty \$0-canvas empty 20 12 0 14 -225280
 -66577 0;
 #X obj 416 317 hsl 135 15 0 100 0 0 empty \$0-env empty -2 -8 0 10
 -262144 -1 -1 0 1;
 #X obj 556 234 vsl 15 95 0 1 0 0 empty empty Vol -2 -9 0 10 -262144
 -1 -1 9400 1;
 #N canvas 0 116 450 250 (subpatch) 0;
-#X array \$0-buffer 4351 float 2;
-#X coords 0 1 4351 -1 140 80 1 0 0;
+#X array \$0-buffer 11572 float 2;
+#X coords 0 1 11572 -1 140 80 1 0 0;
 #X restore 413 232 graph;
 #X obj 136 51 route bang load rate var;
 #X obj 697 116 r \$0-loadfile;

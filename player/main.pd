@@ -1,9 +1,9 @@
-#N canvas 258 213 1366 867 10;
-#X obj 145 276 8seq;
-#X obj 573 276 8kit;
+#N canvas 0 98 1366 670 10;
+#X obj 27 180 8seq;
+#X obj 455 180 8kit;
 #N canvas 0 134 906 316 ezdac 0;
 #X obj 282 89 hsl 128 30 0 1 0 0 empty empty empty -2 -8 0 10 -257985
--1 -1 5800 1;
+-1 -1 7300 1;
 #X obj 261 126 *~;
 #X obj 261 152 dac~;
 #X msg 246 175 \; pd dsp \$1;
@@ -29,8 +29,8 @@ front label.;
 #X connect 9 0 1 0;
 #X connect 11 0 7 0;
 #X coords 0 -1 1 1 176 54 1 241 70;
-#X restore 573 638 pd ezdac;
-#N canvas 376 371 1245 709 control 0;
+#X restore 455 542 pd ezdac;
+#N canvas 0 98 1366 670 control 0;
 #N canvas 597 427 531 423 random_loader 0;
 #X obj 87 379 outlet;
 #X obj 29 39 inlet;
@@ -95,7 +95,7 @@ An "sampler X" message loads random sample to sampler X.;
 #X text 1071 680 To 8kit control;
 #X obj 863 84 loadbang;
 #X obj 862 151 nbx 4 30 40 260 0 0 empty empty Tempo 92 15 0 20 -262144
--1 -1 109 256;
+-1 -1 80 256;
 #X obj 1071 438 int 0;
 #X obj 219 306 random_banger;
 #X obj 219 347 random 8;
@@ -117,7 +117,7 @@ An "sampler X" message loads random sample to sampler X.;
 #X obj 857 186 cnv 15 304 90 empty empty ----------Samples_loader----------
 20 12 0 14 -204786 -66577 0;
 #X obj 1103 241 nbx 2 30 0 7 0 0 empty empty empty 56 15 0 20 -262144
--1 -1 1 256;
+-1 -1 5 256;
 #X obj 863 206 bng 30 250 50 0 empty empty Randomize_all 32 15 0 20
 -262144 -1 -1;
 #X obj 863 241 bng 30 250 50 0 empty empty Randomize_sampler 32 15
@@ -125,16 +125,16 @@ An "sampler X" message loads random sample to sampler X.;
 #X obj 304 156 cnv 15 366 120 empty empty ----------Pattern_designer----------
 20 12 0 14 -204800 -66577 0;
 #X obj 307 206 nbx 4 30 0.1 60 0 0 empty empty Pattern_gen_period 92
-12 0 20 -262144 -1 -1 10 256;
+12 0 20 -262144 -1 -1 53.91 256;
 #X obj 307 173 tgl 30 0 empty empty Pattern_randomizer_on_/_off 32
 15 0 20 -262144 -1 -1 1 1;
 #X obj 379 221 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 397 225 Randomize a pattern every X seconds;
 #X obj 311 252 hsl 100 20 0 1 0 0 empty empty Density -2 -8 0 10 -262144
--1 -1 4900 1;
+-1 -1 3960 1;
 #X obj 422 252 hsl 100 20 0 1 0 0 empty empty Curve -2 -8 0 10 -262144
--1 -1 9900 1;
+-1 -1 0 1;
 #X msg 877 117 100;
 #X text 490 556 Make the curve curvey :);
 #X obj 433 554 pow 1.5;
@@ -149,15 +149,44 @@ An "sampler X" message loads random sample to sampler X.;
 #X obj 774 317 t b f;
 #X msg 774 407 \$1 var \$2;
 #X obj 687 250 hsl 100 20 0 4 0 0 empty empty Variance -2 -8 0 10 -262144
--1 -1 1200 1;
-#X obj 688 198 hsl 100 20 0 6 0 0 empty empty Rate -2 -8 0 10 -262144
--1 -1 1450 1;
+-1 -1 0 1;
+#X obj 688 198 hsl 100 20 0.2 6 0 0 empty empty Rate -2 -8 0 10 -262144
+-1 -1 3072 1;
 #X obj 792 198 bng 20 250 50 0 empty empty reset 22 10 0 10 -262144
 -1 -1;
 #X obj 791 250 bng 20 250 50 0 empty empty reset 22 10 0 10 -262144
 -1 -1;
 #X msg 761 179 1;
 #X msg 759 231 0;
+#X msg 534 41 listen 12000;
+#X obj 534 63 netreceive -u -b;
+#N canvas 405 249 450 300 parse 0;
+#X obj 41 42 inlet;
+#X text 87 7 Parse the OSC message and unpack to components;
+#X obj 41 257 outlet;
+#X obj 41 71 oscparse;
+#X obj 41 102 route list;
+#X obj 41 133 route wek;
+#X obj 41 164 route outputs;
+#X obj 41 202 unpack f f f f f f;
+#X obj 92 257 outlet;
+#X obj 143 257 outlet;
+#X obj 194 257 outlet;
+#X obj 245 257 outlet;
+#X obj 296 257 outlet;
+#X connect 0 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 0;
+#X connect 7 1 8 0;
+#X connect 7 2 9 0;
+#X connect 7 3 10 0;
+#X connect 7 4 11 0;
+#X connect 7 5 12 0;
+#X restore 534 85 pd parse;
+#X obj 534 18 loadbang;
 #X connect 0 0 8 0;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
@@ -214,8 +243,17 @@ An "sampler X" message loads random sample to sampler X.;
 #X connect 56 0 58 0;
 #X connect 57 0 54 0;
 #X connect 58 0 53 0;
+#X connect 59 0 60 0;
+#X connect 60 0 61 0;
+#X connect 61 0 35 0;
+#X connect 61 1 39 0;
+#X connect 61 2 40 0;
+#X connect 61 3 54 0;
+#X connect 61 4 53 0;
+#X connect 61 5 11 0;
+#X connect 62 0 59 0;
 #X coords 0 -1 1 1 865 140 1 300 140;
-#X restore 145 127 pd control;
+#X restore 27 31 pd control;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 0 0;
