@@ -11,8 +11,8 @@
 
 #include "HX711.h"
 
-#define DOUT 3
-#define CLK 2
+#define DOUT 4
+#define CLK 3
 #define A_GAIN 64
 #define B_GAIN 32
 // No need to know exact weight. Scaling just to get less data over serial.
