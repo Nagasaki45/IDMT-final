@@ -3,12 +3,12 @@
 #X obj 455 180 8kit;
 #N canvas 0 134 906 316 ezdac 0;
 #X obj 282 89 hsl 128 30 0 1 0 0 empty empty empty -2 -8 0 10 -257985
--1 -1 7300 1;
+-1 -1 12700 1;
 #X obj 261 126 *~;
 #X obj 261 152 dac~;
 #X msg 246 175 \; pd dsp \$1;
-#X obj 246 89 tgl 30 0 empty empty empty 32 7 0 10 -24198 -33289 -33289
-1 1;
+#X obj 246 89 tgl 30 0 empty empty empty 32 7 0 10 -258699 -33289 -33289
+0 1;
 #X obj 89 212 sel 0;
 #X msg 121 239 color 16 12 12;
 #X msg 89 267 color 13 12 12;
@@ -95,7 +95,7 @@ An "sampler X" message loads random sample to sampler X.;
 #X text 1071 680 To 8kit control;
 #X obj 863 84 loadbang;
 #X obj 862 151 nbx 4 30 40 260 0 0 empty empty Tempo 92 15 0 20 -262144
--1 -1 80 256;
+-1 -1 100 256;
 #X obj 1071 438 int 0;
 #X obj 219 306 random_banger;
 #X obj 219 347 random 8;
@@ -117,7 +117,7 @@ An "sampler X" message loads random sample to sampler X.;
 #X obj 857 186 cnv 15 304 90 empty empty ----------Samples_loader----------
 20 12 0 14 -204786 -66577 0;
 #X obj 1103 241 nbx 2 30 0 7 0 0 empty empty empty 56 15 0 20 -262144
--1 -1 5 256;
+-1 -1 0 256;
 #X obj 863 206 bng 30 250 50 0 empty empty Randomize_all 32 15 0 20
 -262144 -1 -1;
 #X obj 863 241 bng 30 250 50 0 empty empty Randomize_sampler 32 15
@@ -125,14 +125,14 @@ An "sampler X" message loads random sample to sampler X.;
 #X obj 304 156 cnv 15 366 120 empty empty ----------Pattern_designer----------
 20 12 0 14 -204800 -66577 0;
 #X obj 307 206 nbx 4 30 0.1 60 0 0 empty empty Pattern_gen_period 92
-12 0 20 -262144 -1 -1 53.91 256;
+12 0 20 -262144 -1 -1 10 256;
 #X obj 307 173 tgl 30 0 empty empty Pattern_randomizer_on_/_off 32
 15 0 20 -262144 -1 -1 1 1;
 #X obj 379 221 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 397 225 Randomize a pattern every X seconds;
 #X obj 311 252 hsl 100 20 0 1 0 0 empty empty Density -2 -8 0 10 -262144
--1 -1 3960 1;
+-1 -1 0 1;
 #X obj 422 252 hsl 100 20 0 1 0 0 empty empty Curve -2 -8 0 10 -262144
 -1 -1 0 1;
 #X msg 877 117 100;
@@ -151,7 +151,7 @@ An "sampler X" message loads random sample to sampler X.;
 #X obj 687 250 hsl 100 20 0 4 0 0 empty empty Variance -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 688 198 hsl 100 20 0.2 6 0 0 empty empty Rate -2 -8 0 10 -262144
--1 -1 3072 1;
+-1 -1 0 1;
 #X obj 792 198 bng 20 250 50 0 empty empty reset 22 10 0 10 -262144
 -1 -1;
 #X obj 791 250 bng 20 250 50 0 empty empty reset 22 10 0 10 -262144
