@@ -1,17 +1,47 @@
+![](report/media/slide.png)
+
 ## What?
 
-My final project to the Interactive Digital Multimedia Techniques (ESC742P) module, Media and Arts Technology, Queen Mary University of London.
+The Schleikess ("suspenders" in Yiddish) are my final project to the Interactive Digital Multimedia Techniques (ESC742P) module, Media and Arts Technology, Queen Mary University of London.
 
 ## The concept
 
-A controller for full-body interactive performances that requires force and effort to play with, hopefully facilitating expressiveness. It will be composed of a main unit, connected to the one end of two or four elastic bands. The other side of each elastic band will be attached to a wrist, an ankle, or other body part. The main unit will measure the force applied on each elastic band and send this information for the computer for further processing and creative use.
+A controller for full-body interactive performance that requires force and effort to play with, hopefully facilitating expressiveness. It is composed of a main unit, connected to the one end of two elastic bands (but can easily extends in the future with more bands). The other side of each elastic band is attached to a wrist, an ankle, or other body part. The main unit measures the force applied on each elastic band and send this information for the computer for further processing and creative use.
 
-## The hardware / technology
+## The hardware
 
-- I plan to use [physiotherapy elastic bands](http://www.physioroom.com/images/products//full/38990_image2.jpg) as they are very stretchy and goes up to x3 their steady length. They also easily modified (cut / knot).
-- I'm leaning towards attaching a hacked [digital hanging scale](http://www.ebay.co.uk/itm/331768570719) between the main unit and each band to measure the applied force. I already ordered one to experiment with. Alternatively, a [S shaped load cell](http://www.ebay.co.uk/itm/Waterproof-S-Type-Beam-Load-Cell-Scale-Sensor-Weighting-Sensor-50kg-With-Cable-/191436100115?hash=item2c927b1213:g:JqQAAOSwIgNXvXY1) and [amplifier](https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide) can be used. But it's much more expensive. I prefer not to use a [stretch sensor](https://www.adafruit.com/product/519), as it way less stretchy compared to the elastic band (can stretch only up to x1.5) and requires measuring the distant part of the band.
-- The main unit will be the arduino. If I will have enough time I might switch to an [esp8266](https://en.wikipedia.org/wiki/ESP8266) due to its wireless (WiFi) capabilities.
+- I use [physiotherapy elastic bands](http://www.physioroom.com/images/products//full/38990_image2.jpg) as they are very stretchy and goes up to x3 their steady length. They also easily modified (cut / knot).
+- The sensors are hacked [digital hanging scales](https://www.amazon.co.uk/PicknBuy®-20g-40kg-Portable-Electronic-Weighing/dp/B00695N01Q/). They are attached between the main unit and each elastic band to measure the applied force. The low signal from the two scales' load cells is amplified and converted to digital by a single [SparkFun HX711 load cell amplifier](https://www.sparkfun.com/products/retired/13230). To run at faster rate I cut the amplifier jumper and got a 8x speedup.
+- The arduino reads the signals from the load cells and send them serially over USB to the computer.
 
-## Demo
+## The software
 
-To demo the controller I will use [Rebecca Fiebrink's Wekinator](http://www.wekinator.org/) for processing the incoming sensor measurements and a max synth / hardware synth.
+- [The `scale_reader` arduino sketch](https://github.com/Nagasaki45/Schleikess/blob/master/scale_reader/scale_reader.ino) uses [my optimized version of bodge/HX711](https://github.com/nagasaki45/hx711) library to read the value from the HX711 and send the data over serial as comma separated strings.
+- [The `serial_to_osc` python script](https://github.com/Nagasaki45/Schleikess/blob/master/serial_to_osc/serial_to_osc.py) reads the serial port and output the received data as OSC messages.
+- A generative 16 steps drum machine, codded in pure data (Pd), is controlled by OSC messages (see figure below). The inputs for the drum machine are:
+  - **Patterns generation period** - the time (in seconds) until a new pattern will be generate. A new pattern is generated only for one of the 8 samples each time, so there is a continuity.
+  - **Density** - the probability for each of the 16  steps in a pattern to contain an onset.
+  - **Curve** - weighting the density between the sequencers so sequencer number 0 has the true density value and the rest are gradually attenuated. It is important for allowing certain samples to be more dense than other (for example, hi-hat compared to kick).
+  - **Rate** - a frequency multiplier for the samples.
+  - **Variance** - to add randomness to the rate above.
+  - **Tempo** - self explainatory :-).
+- [The Wekinator](http://www.wekinator.org/) is used as a middleware between the python `serial_to_osc` script and the Pd patch to create an interesting mapping between input parameters (the tension of the elastic bands) and synthesis parameters.
+
+![Pd patch.](report/media/pd-patch.png)
+
+# How do I use it?
+
+1. Connect the two load cells to the arduino as TODO schematic.
+1. Upload the `scale_reader` sketch to the arduino.
+1. When the arduino is connected to the computer run the `serial_to_osc` python script with:
+
+  ```bash
+  cd serial_to_osc
+  virtualenv env  # using virtualenv is highly  recommended. First run only
+  source env/bin/activate
+  pip install -r requirements.txt  # First run only
+  ./serial_to_osc.py
+  ```
+1. Open the Wekinator and load the project from `weki/project`.
+1. Open the `player/main.pd` patch. On first run, make sure to install [`abl_link~`](https://github.com/libpd/abl_link). It's a dependency for the Pd patch that can be easily downloaded / installed with [`deken`](https://github.com/pure-data/deken).
+1. Profit!

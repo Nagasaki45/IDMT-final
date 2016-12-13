@@ -11,7 +11,7 @@ import serial  # pySerial
 SERIAL_PORT = '/dev/ttyACM*'
 SERIAL_BAUD_RATE = 9600
 OSC_PORT = 6448  # Wekinator default port
-OSC_MSG_ADDRESS = '/wek/inputs'
+OSC_MSG_ADDRESS = '/wek/inputs'  # Wekinator default input address
 
 
 def connect_serial_port():
