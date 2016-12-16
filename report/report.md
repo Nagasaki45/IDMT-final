@@ -130,4 +130,4 @@ Therefore, the most important lesson I'm learning from this project is to consid
 
 - The software for the project can be found [on github](https://github.com/Nagasaki45/Schleikess).
 
-- A video demonstration can be found [on youtube](TODO video).
+- A video demonstration can be found [on youtube](https://www.youtube.com/watch?v=_BUf_VLCIWQ).
