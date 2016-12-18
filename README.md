@@ -11,6 +11,8 @@ It is composed of two elastic bands that are attached to the players' belt loops
 The player holds the other side of each elastic band and stretches them to play.
 The controller is demonstrated using a generative drum machine by mapping the stretch of the bands to tempo and the pitch of the samples.
 
+[![](report/media/youtube-cover.png)](https://www.youtube.com/watch?v=_BUf_VLCIWQ)
+
 ## System design
 
 ![Schematic diagram of the system design.](report/media/diagram.png)
