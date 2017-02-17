@@ -3,3 +3,8 @@ env/
 weki/project/current
 *.swp
 *.pdf
+*.aux
+*.bbl
+*.blg
+*.log
+*.out

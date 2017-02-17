@@ -2,7 +2,7 @@
 
 ## What?
 
-The Schleikess ("suspenders" in Yiddish) are my final project to the Interactive Digital Multimedia Techniques (ESC742P) module, Media and Arts Technology, Queen Mary University of London.
+The Schleikess ("suspenders" in Yiddish) are my final project to the Interactive Digital Multimedia Techniques (ECS742P) module. My conference paper for the Research Methods (ECS719P) module is based on the same project. Both were developed in the Media and Arts Technology program, Queen Mary University of London.
 
 ## The concept
 
