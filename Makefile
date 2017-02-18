@@ -12,3 +12,13 @@ report-build: diagrams
 
 report-regenerate:
 	./report/regenerate.sh
+
+paper-build:
+	cd paper \
+	&& pdflatex paper.tex \
+	&& bibtex paper \
+	&& pdflatex paper.tex \
+	&& pdflatex paper.tex
+
+paper-regenerate:
+	./paper/regenerate.sh

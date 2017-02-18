@@ -1,13 +1,13 @@
 % CHI Proceedings Template.
 %
 % FILENAME: sigchi.cls
-%  
+%
 % SOURCE: See https://github.com/sigchi for latest official version.
 %
 % NOTE: If you wish to edit this document, please list edits properly
 % in the CHANGELOG section and not scattered through the code.
-% 
-% CHANGELOG: 
+%
+% CHANGELOG:
 %
 % 2015-12-10 Daniel Ashbrook Switch 7-bit fonts to 8-bit
 %
@@ -41,8 +41,8 @@
 % Traub, Olin Shivers also using elements of esub2acm.cls.  Modified
 % from ARTICLE DOCUMENT STYLE -- Released 16 March 1988 for LaTeX
 % version 2.09 by Leslie Lamport, 16 March 1988.
-% 
-% MISC: 
+%
+% MISC:
 %
 % Fixed the format to match the Word template and added a \teaser
 % command to add a teaser image.
@@ -65,8 +65,8 @@
 %
 % \documentclass{sigchi}
 % \usepackage{times}
-% \pagenumbering{arabic} % Arabic page numbers for submission.  
-%                        % Remove this line to eliminate page numbers  
+% \pagenumbering{arabic} % Arabic page numbers for submission.
+%                        % Remove this line to eliminate page numbers
 %                        % for the camera ready copy
 % \title{The Title}
 % \numberofauthors{2}
@@ -642,7 +642,7 @@
   \hrule width .4\columnwidth
   \kern 2.6\p@}                 % The \hrule has default height of .4pt .
 % ------
-\long\def\@makefntext#1{\noindent 
+\long\def\@makefntext#1{\noindent
 %\hbox to .5em{\hss$^{\@thefnmark}$}#1}   % original
 \hbox to .5em{\hss\textsuperscript{\@thefnmark}}#1}  % C. Clifton / GM Oct. 2nd. 2002
 % -------
@@ -666,14 +666,14 @@
 
 % According to the CHI specifications, captions should be centered.
 % This looks kind of bad for multi-line captions, so I only center
-% 1-line captions.  
+% 1-line captions.
 \long\def\@makecaption#1#2{
   \vskip 2pt % \baselineskip
   \setbox\@tempboxa\hbox{\small
 \textbf{#1. #2}} % DLC
   \ifdim \wd\@tempboxa >\hsize % IF longer than one line:
      \small\textbf{#1. #2}\par     %   THEN set as ordinary paragraph.
-    \else                      %   ELSE  center. 
+    \else                      %   ELSE  center.
      \hbox to\hsize{\hfil\box\@tempboxa\hfil}\par
   \fi}
 
@@ -932,7 +932,7 @@
 \def\@category#1#2#3[#4]{%
     \begingroup
         \let\and\relax
-%            #1 [\textbf{#2}]% 
+%            #1 [\textbf{#2}]%
             #1 #2%   % DLC
             \if!#4!%
                 \if!#3!\else : #3\fi
@@ -1439,7 +1439,7 @@
 \def\thebibliography#1{%
 %% Comment this to have blue DOI links.
 \makeatletter
-\def\url@leostyle{% 
+\def\url@leostyle{%
 \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\color{black}\small\bf\ttfamily}}}
 \makeatother
 \urlstyle{leo}
@@ -1574,58 +1574,58 @@
 \def\crdata#1{\global\acmcopyr{#1}}
 \def\permission#1{\global\boilerplate{#1}}
 
-% ISBN
+% % ISBN
+% %
+% \def\isbn#1{\global\acmcopyr={#1}}
+% \isbn{978-1-4503-2138-9}
 %
-\def\isbn#1{\global\acmcopyr={#1}}
-\isbn{978-1-4503-2138-9}
-
-\RequirePackage{url}
-\urlstyle{rm}
-\def\doi#1{\def\@doi{#1}}
-\doi{10.1145/1235}
-\def\printdoi#1{\url{#1}}
-
-
-
-% Copyright
-\RequirePackage{acmcopyright}
-\setcopyright{none}
-
+% \RequirePackage{url}
+% \urlstyle{rm}
+% \def\doi#1{\def\@doi{#1}}
+% \doi{10.1145/1235}
+% \def\printdoi#1{\url{#1}}
 %
-\global\boilerplate={\@copyrightpermission}
 %
-\newtoks\copyrightetc
-\ifnum\ACM@basesize=9\relax
-\global\copyrightetc{%
-{\noindent\confname\ \the\conf } \the\confinfo \par\smallskip
-  \if@printcopyright
-    \copyright\ \the\copyrtyr\ \@copyrightowner
-  \fi
-  \if@acmowned ISBN \else\ifnum\acm@copyrightmode=2 ISBN \else \par\smallskip ACM ISBN \fi\fi
- \the\acmcopyr\ifx\@acmPrice\@empty.\else\dots\@acmPrice\fi\par\smallskip
-{DOI: \small\expandafter\printdoi\expandafter{\@doi}}} 
-\toappear{\fontsize{7pt}{8pt}\fontfamily{ptm}\selectfont
-  \the\boilerplate\par\smallskip
- \the\copyrightetc}
-\fi
-\ifnum\ACM@basesize=10\relax
-\global\copyrightetc{%
-{\noindent\confname\ \the\conf\ \the\confinfo}\par\smallskip
-  \if@printcopyright
-    \copyright\ \the\copyrtyr\ \@copyrightowner
-  \fi
-  \if@acmowned ISBN \else\ifnum\acm@copyrightmode=2 ISBN \else \par\smallskip ACM ISBN \fi\fi
- \the\acmcopyr\ifx\@acmPrice\@empty.\else\dots\@acmPrice\fi\par\smallskip
-{DOI: \small\expandafter\printdoi\expandafter{\@doi}}} 
-\toappear{\fontsize{7.5pt}{8.5pt}\fontfamily{ptm}\selectfont
-  \the\boilerplate\par\smallskip
- \the\copyrightetc}
-\fi
+%
+% % Copyright
+% \RequirePackage{acmcopyright}
+% \setcopyright{none}
+%
+% %
+% \global\boilerplate={\@copyrightpermission}
+% %
+% \newtoks\copyrightetc
+% \ifnum\ACM@basesize=9\relax
+% \global\copyrightetc{%
+% {\noindent\confname\ \the\conf } \the\confinfo \par\smallskip
+%   \if@printcopyright
+%     \copyright\ \the\copyrtyr\ \@copyrightowner
+%   \fi
+%   \if@acmowned ISBN \else\ifnum\acm@copyrightmode=2 ISBN \else \par\smallskip ACM ISBN \fi\fi
+%  \the\acmcopyr\ifx\@acmPrice\@empty.\else\dots\@acmPrice\fi\par\smallskip
+% {DOI: \small\expandafter\printdoi\expandafter{\@doi}}}
+% \toappear{\fontsize{7pt}{8pt}\fontfamily{ptm}\selectfont
+%   \the\boilerplate\par\smallskip
+%  \the\copyrightetc}
+% \fi
+% \ifnum\ACM@basesize=10\relax
+% \global\copyrightetc{%
+% {\noindent\confname\ \the\conf\ \the\confinfo}\par\smallskip
+%   \if@printcopyright
+%     \copyright\ \the\copyrtyr\ \@copyrightowner
+%   \fi
+%   \if@acmowned ISBN \else\ifnum\acm@copyrightmode=2 ISBN \else \par\smallskip ACM ISBN \fi\fi
+%  \the\acmcopyr\ifx\@acmPrice\@empty.\else\dots\@acmPrice\fi\par\smallskip
+% {DOI: \small\expandafter\printdoi\expandafter{\@doi}}}
+% \toappear{\fontsize{7.5pt}{8.5pt}\fontfamily{ptm}\selectfont
+%   \the\boilerplate\par\smallskip
+%  \the\copyrightetc}
+% \fi
+%
+% \clubpenalty=10000
+% \widowpenalty = 10000
 
-\clubpenalty=10000 
-\widowpenalty = 10000
-
-%% 
+%%
 % For the CCSXML 2012 Categories
 
 \let\@concepts\@empty
@@ -1665,11 +1665,11 @@
 
 %% DanCo, 10/19/11: Added this to reduce overfull lines per Sheridan
 %% request; it leads to occasionally unpleasant extra whitespace,
-%% though actually no worse and perhaps better than the 
+%% though actually no worse and perhaps better than the
 %% default Word template.
 %%
 %% This can be manually controlled instead by authors in text
-%% by putting \sloppy before and \fussy immediately 
+%% by putting \sloppy before and \fussy immediately
 %% after troublesome paras.  Idea found at
 %% http://www.economics.utoronto.ca/osborne/latex/PMAKEUP.HTM
 
