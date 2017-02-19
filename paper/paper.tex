@@ -1,9 +1,5 @@
 \documentclass{sigchi}
 
-% Arabic page numbers for submission.  Remove this line to eliminate
-% page numbers for the camera ready copy
-\pagenumbering{arabic}
-
 % Load basic packages
 \usepackage{balance}       % to better equalize the last page
 \usepackage{graphics}      % for EPS, load graphicx instead
@@ -21,23 +17,12 @@
 \usepackage{ccicons}          % Cite your images correctly!
 % \usepackage[utf8]{inputenc} % for a UTF8 editor only
 
-% If you want to use todo notes, marginpars etc. during creation of
-% your draft document, you have to enable the "chi_draft" option for
-% the document class. To do this, change the very first line to:
-% "\documentclass[chi_draft]{sigchi}". You can then place todo notes
-% by using the "\todo{...}"  command. Make sure to disable the draft
-% option again before submitting your final document.
-\usepackage{todonotes}
-
 % Paper metadata (use plain text, for PDF inclusion and later
 % re-using, if desired).  Use \emtpyauthor when submitting for review
 % so you remain anonymous.
-% TODO title
-\def\plaintitle{SIGCHI Conference Proceedings Format}
+\def\plaintitle{Physical Effort and Expressivity in\\ Digital Musical Instruments}
 \def\plainauthor{Tom Gurion}
-% TODO keywords
-\def\plainkeywords{Authors' choice; of terms; separated; by
-  semicolons; include commas, within terms only; required.}
+\def\plainkeywords{Effort; Expression; Digital musical instruments.}
 
 % llt: Define a global style for URLs, rather that the default one
 \makeatletter
@@ -106,21 +91,71 @@
 
 \section{Introduction}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The use of computers and digital instruments is common in nowadays musical performances.
+One significant different between traditional and digital musical instruments performances is that physical effort is usually involve in the former, but can be totally absent in the later.
+This difference presents several issues for live computer music.
+For example, it might prevent the audience from understanding the performance.
+On the extreme, the listener might question the "liveness" of a performance altogether when he can't tell the difference between live and pre-composed playback.
+Besides, visible effort is an important expressive tool in many musical contexts.
+TODO BETTER EXAMPLES
+Consider, for example, a trumpet player and his outcurved veins in the neck while he reaches a high note, or a drummer, sweating during intense performance.
 
-\section{Case study}
+TODO Define the issue better. Digital musical instruments are not laptop music, but some of the issues overlap.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Theoretical studies from the last few decades highlited these issues.
+Some researchers explain the core of the problem by the lack of apparant relationship between the way an instrument is played and the resulted sound \cite{Schloss2003,DEscrivan2006}.
+Others argue that computers promote "effortless interaction" and by that contradict they way music should be created \cite{Ryan1992}.
+Most of the research in the field, however, doesn't confront the theoretical hypotheses using rigrous experiments.
+One exception is a recent experiment based study by Bown et al.\ \cite{Bown2014}.
+Their results show that listeners do able to perceive what the performer is doing from the audio alone.
 
-\section{Experiment}
+Along with these lines, the current study examines to what extent physical effort can enhance expressivity in playing digital instruments.
+In addition, it explores the effect of the performer's physical effort on the audience perception and appreciation of the performance.
+These questions are assessed in controlled experiment, evaluating perceived expressivity from the point of view of the performer and the listener alike.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The current work uses the Schleikess interface, a digital controller for interactive performance that requires physical effort and large body movements from the performer, to assess performance expressivity.
+Figure \ref{fig:schleikess} shows a schematic diagram of the interface.
+It is composed of two elastic bands, each of them is connected with one side, through a load sensor, to the belt loop of the performer.
+The performer holds the other side of the elasic bands and can strech them to play.
 
-\section{Results}
+This controller can be used for different creative purposes.
+In the context of this study one elastic band controls the pitch and the other controls the amplitude of a sawtooth tone generator.
+TODO discuss more this type of interaction. Simple relationship between gestures and produced sound helps the audience to understand the performance. TODO search and reference the theramin design decition.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\columnwidth]{figures/schleikess}
+  \caption{A diagram of the Schleikess interface. In blue are the two elastic bands. Stretching the left raises the pitch and stretching the right raises the amplitude.}~\label{fig:schleikess}
+\end{figure}
+
+\section{Initial study}
+
+\subsection{Methods}
+
+In an initial study I examined to what extent physical effort can enhance expressivity in playing digital instruments.
+TODO X participants were invited to play with the Schleikess based synthesiser and discuss their subjective experience.
+Apart from playing, they could modify the amount of physical effort required by the instrument by changing the sensitivity of the interface to force.
+Two sliders on the computer screen controlled the sensitivity, one for the pitch and one for the amplitude.
+This way, when the sensitivity is low, a major physical force is needed to raise the pitch or amplitude, but when the sensitivity was high even minor changes affect the output significantly.
+The participants were instructed that they need to stretch the elastic bands to play the instrument and that the sliders on the computer screen changes the sensitivity of the instrument.
+However, the relationship between stretching the bands and the resulted sound was not explaind.
+
+The participants were asked to familiarize themeselves with the instrument, understand the mapping between gestures and sound, and then set the sliders to the values they find most expressive.
+Later, I discussed with each participant about the experience of playing the instrument.
+The discussion concentrated around questions of how expressive and musical the instrument felt with differente sensitivity settings.
+
+This type of exploratory initial study is designed to get basic insights about the relationships between physical effort and expressivity.
+Provided that there is almost no empirical research in this field, this type of broad exploration is necessary to gain first insights.
+
+\subsection{Results}
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \section{Discussion}
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection{Future research}
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
