@@ -35,8 +35,6 @@ For more technical info see the [full report](report/report.md).
   ./serial_to_osc.py
   ```
 
-1. Open the Wekinator and load the project from `weki/project`.
-
-1. Open the `player/main.pd` patch. On first run, make sure to install [`abl_link~`](https://github.com/libpd/abl_link). It's a dependency for the Pd patch that can be easily downloaded / installed with [`deken`](https://github.com/pure-data/deken).
+1. Open the `player/player.pd` patch.
 
 1. Profit!

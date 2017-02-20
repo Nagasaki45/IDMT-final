@@ -10,8 +10,7 @@ import serial  # pySerial
 
 SERIAL_PORT = '/dev/ttyACM*'
 SERIAL_BAUD_RATE = 9600
-OSC_PORT = 6448  # Wekinator default port
-OSC_MSG_ADDRESS = '/wek/inputs'  # Wekinator default input address
+OSC_PORT = 12000  # Pd is listening
 
 
 def connect_serial_port():
@@ -27,7 +26,7 @@ def main():
     while True:
         values = serial.readline().strip().split(b',')
         values = [float(x) for x in values]
-        osc_client.send_message(OSC_MSG_ADDRESS, values)
+        osc_client.send_message('/', values)
 
 
 if __name__ == '__main__':
