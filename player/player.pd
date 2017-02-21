@@ -1,4 +1,4 @@
-#N canvas 376 234 440 534 10;
+#N canvas 373 234 440 534 10;
 #X msg 23 69 listen 12000;
 #X obj 23 91 netreceive -u -b;
 #X obj 23 352 *~;
@@ -40,7 +40,7 @@
 #X floatatom 105 143 5 0 0 0 - - -, f 5;
 #X floatatom 303 143 5 0 0 0 - - -, f 5;
 #N canvas 0 98 1366 670 interface 1;
-#N canvas 0 170 667 429 interface 0;
+#N canvas 0 206 667 429 interface 0;
 #X obj 119 155 hsl 300 30 400 200 0 0 empty empty Pitch_sensitivity
 0 -20 0 30 -204786 -1 -1 14950 1;
 #X obj 119 235 hsl 300 30 300 200 0 0 empty empty Amplitude_sensitivity
@@ -49,7 +49,7 @@
 #X msg 34 149 250;
 #X obj 74 199 s pitch_sensitivity;
 #X obj 72 274 s amp_sensitivity;
-#X obj 119 306 hsl 300 30 0 1 0 0 empty empty Volume 0 -20 0 30 -204786
+#X obj 119 309 hsl 300 30 0 1 0 0 empty empty Volume 0 -20 0 30 -261682
 -1 -1 0 1;
 #X obj 116 355 s volume;
 #X obj 116 79 bng 30 250 50 0 empty empty Reset 32 15 0 20 -262144
