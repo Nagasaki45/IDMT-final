@@ -20,9 +20,9 @@
 % Paper metadata (use plain text, for PDF inclusion and later
 % re-using, if desired).  Use \emtpyauthor when submitting for review
 % so you remain anonymous.
-\def\plaintitle{Physical Effort and Expressivity in\\ Digital Musical Instruments}
+\def\plaintitle{Physical Effort and Expressivity in\\ Electronic Musical Instruments}
 \def\plainauthor{Tom Gurion}
-\def\plainkeywords{Effort; Expression; Digital musical instruments.}
+\def\plainkeywords{effort; expression; electronic music instruments}
 
 % llt: Define a global style for URLs, rather that the default one
 \makeatletter
@@ -91,40 +91,49 @@
 
 \section{Introduction}
 
-The use of computers and digital instruments is common in nowadays musical performances.
-TODO one more sentence here.
-One significant difference between traditional and digital musical instruments performances is that physical effort is usually involve in the former, but can be totally absent in the later.
-This difference presents several issues, most of these thorouly explored in the context of laptop music.
+The use of computers and electronic instruments is common in nowadays musical performances.
+TODO few more introductory sentences here.
 
-TODO paragraph explaining laptop music.
-
-For example, a common criticism is that the audiance might fail to understand the performance.
-On the extreme, a listener might question the "liveness" of a performance altogether when unable to tell the difference between live and pre-composed playback.
-Besides, visible effort is an important expressive tool in many musical contexts.
-TODO BETTER EXAMPLES
-Consider, for example, a trumpet player and his outcurved veins in the neck while he reaches a high note, or a drummer, sweating during intense performance.
-
-TODO Define the issue better. Digital musical instruments are not laptop music, but some of the issues overlap.
-
-Theoretical studies from the last few decades highlited these issues.
-Some researchers explain the core of the problem by the lack of apparant relationship between the way an instrument is played and the resulted sound \cite{Schloss2003,DEscrivan2006}.
-Others argue that computers promote "effortless interaction" and by that contradict they way music should be created \cite{Ryan1992}.
-Most of the research in the field, however, doesn't confront the theoretical hypotheses using rigrous experiments.
-One exception is a recent experiment based study by Bown et al.\ \cite{Bown2014}.
-Their results show that listeners do able to perceive what the performer is doing from the audio alone.
-
-Along with these lines, the current study examines to what extent physical effort can enhance expressivity in playing digital instruments.
+The current study examines to what extent physical effort can enhance expressivity in playing digital instruments.
 In addition, it explores the effect of the performer's physical effort on the audience perception and appreciation of the performance.
 These questions are assessed in controlled experiment, evaluating perceived expressivity from the point of view of the performer and the listener alike.
+
+\section{Related studies}
+
+During the 20th century electronic music interfaces evolved from mimicking acoustic instrument, like the piano keyboard or drums, to use novel techniques to control sound \cite{Paradiso1997}.
+Examples include gesture based \cite{Wanderley2001} and tabletop interfaces \cite{Jorda2007}, wearables \cite{Mitchell2012}, and biofeedback devices like EEG helmets \cite{Miranda2005}.
+In parallel to these changes, research and design of new instruments started to separate the interface from the audio generation \cite{Cook2004}.
+This model describe most instruments by means of control unit, audio generation unit, and the mapping that tie them together \cite{Drummond2009}.
+As a result, these interfaces often break the apparent relationship between how the instrument is played and the resulted sound \cite{DEscrivan2006}.
+
+One significant difference between traditional and electronic music performances is that physical effort is usually involve in the former, but can be totally absent from the later.
+This problem is often attributed to the ideal of "effortless interaction" that computers propose \cite{Ryan1992}.
+Whereas this ideal is perfectly viable for designing software to browse the internet or write documents, it contradict with most creative processes.
+Another issue is that computers and by extension several electronic music interfaces prevent embodied interactions by their very nature \cite{Armstrong2006}.
+
+Apart from the expressivity of the performer, the ability of the listener to understand the performance might also depend on the relationship between visible effort and the resulted sound \cite{Verdonk2015}.
+This idea is discussed thoroughly in the context of live laptop music \cite{Schloss2003}.
+In these type of performances, more often than not, the performer stares on the laptop screen, motionless, while operating the software that controls the music.
+The relationship between cause and effect in these performances lack any visual cues.
+On extreme cases, a listener in these situations might question the "liveness" of a performance altogether when unable to tell the difference between live and pre-composed playback.
+Besides, visible effort is an important expressive tool in many musical contexts \cite{Schloss2003}.
+Consider, for example, a trumpet player and his out-curved veins in the neck while reaching a high note, or a drummer, sweating during intense performance.
+Most of the research in the field, however, doesn't confront the theoretical hypotheses using rigorous experiments.
+One exception is a recent experiment based study by Bown et al.\ \cite{Bown2014}.
+Their results show that listeners do able to perceive what the performer is doing from the audio alone.
+Other researchers deal with this issue by suggesting the re-education the audience to appreciate ``aural'' performativity instead of visual spectacles \cite{Stuart2003}.
+Their arguments are supported by examples to traditions that accepted the lack of visual cues in musical performances, like tape music concerts, and different variances of sound installations.
+
+\section{Initial study}
 
 The current work uses the Schleikess interface, a digital controller for interactive performance that requires physical effort and large body movements from the performer, to assess performance expressivity.
 Figure \ref{fig:schleikess} shows a schematic diagram of the interface.
 It is composed of two elastic bands, each of them is connected with one side, through a load sensor, to the belt loop of the performer.
-The performer holds the other side of the elasic bands and can strech them to play.
+The performer holds the other side of the elastic bands and can stretch them to play.
 
 This controller can be used for different creative purposes.
 In the context of this study one elastic band controls the pitch and the other controls the amplitude of a sawtooth tone generator.
-TODO discuss more this type of interaction. Simple relationship between gestures and produced sound helps the audience to understand the performance. TODO search and reference the theramin design decition.
+TODO discuss more this type of interaction. Simple relationship between gestures and produced sound helps the audience to understand the performance. TODO search and reference the theramin design decision.
 
 \begin{figure}
   \centering
@@ -132,28 +141,26 @@ TODO discuss more this type of interaction. Simple relationship between gestures
   \caption{A diagram of the Schleikess interface. In blue are the two elastic bands. Stretching the left raises the pitch and stretching the right raises the amplitude.}~\label{fig:schleikess}
 \end{figure}
 
-\section{Initial study}
-
 \subsection{Methods}
 
 \begin{figure}
   \centering
   \includegraphics[width=0.9\columnwidth]{figures/pd_interface}
-  \caption{The Schleikess graphical interface. Three sliders controll the sensitivity of the pitch band to force, the sensitivity of the amplitude band to force, and the overall volume of the instrument.}~\label{fig:pd-interface}
+  \caption{The Schleikess graphical interface. Three sliders control the sensitivity of the pitch band to force, the sensitivity of the amplitude band to force, and the overall volume of the instrument.}~\label{fig:pd-interface}
 \end{figure}
 
 In this initial study I examined to what extent physical effort can enhance expressivity in playing digital instruments.
 TODO more specifically... Controllability, range of possibilities. Or maybe just in the discussion.
 
-TODO X participants were invited to play with the Schleikess based synthesiser and discuss their subjective experience.
+Eight participants were invited to play with the Schleikess based synthesizer and discuss their subjective experience.
 Apart from the physical interface, figure \ref{fig:pd-interface} shows the interface on the computer screen that was exposed to the participants.
 The interface presents three sliders.
-The first two controll the sensitivity of each elastic band to force.
+The first two control the sensitivity of each elastic band to force.
 So, when the sensitivity is set to low value, a major physical force is needed to raise the pitch or amplitude, but when the sensitivity is set to high value even minor changes affect the output significantly.
-The last slider controlls the overall volume of the instrument and allows the participant to set it to a comfortable hearing level.
+The last slider controls the overall volume of the instrument and allows the participant to set it to a comfortable hearing level.
 
-First, I explained to the participants that stretching the elastic bands controlls the instrument.
-The relationship between stretching the bands and the resulted sound was not explaind.
+First, I explained to the participants that stretching the elastic bands controls the instrument.
+The relationship between stretching the bands and the resulted sound was not explained.
 Than, the participants were asked to play the instrument until they understand the mapping between gestures and sound.
 During this time they could also set the volume to a comfortable hearing level.
 After familiarize themselves with the instrument they were asked to set the sensitivity sliders to the values they like the most.
@@ -168,23 +175,28 @@ Provided that there is almost no empirical research in this field, this type of 
 
 \subsection{Results}
 
-Most of the participants in the study, TODO out of TODO, understood how the instrument works by trying it out.
-I explained the relationship between pulling the elasic bands and the resulted sound to those who find it hard to understand.
-After the explaination they continued with the experiment like the rest of the participants.
+Out of the eight participants in the study, seven understood how the instrument works by trying it out.
+I explained the relationship between pulling the elastic bands and the resulted sound to the participant that found it hard to understand.
+After the explanation this participant continued with the experiment as usual.
 
-TODO participants explicitly discussed the balance between having range of possibilities and controllability with relationship to the sensitivity of the instrument to force.
-This was significantly apparant in the discussion of the pitch sensitivity.
-TODO participants wanted to maximize the pitch range that the instrument produces by raising the sensitivity, but no participant set the pitch sensitivity to the maximum value.
-TODO participants explicitly explained that they kept the pitch sensitivity below the maximum value to make sure they can control the instrument.
-On the other hand, only TODO participants kept the pitch sensitivity low, and explained this preference by not liking notes with high pitch in general.
+Seven participants explicitly discussed the balance between having range of possibilities and controllability with relationship to the sensitivity of the instrument to force.
+This was significantly apparent in the discussion of the sensitivity of the pitch band.
+Five participants wanted to maximize the pitch range that the instrument produces by raising the sensitivity, but no participant set the pitch sensitivity to the maximum value.
+Four of these participants explicitly explained that they kept the pitch sensitivity below the maximum value to make sure they can control the instrument
+Only one the five them didn't mind having less control over the pitch in favor of larger pitch range.
+On the other hand, two participants kept the pitch sensitivity low, and explained this preference by enjoying the lower pitches more.
 
 Most of the participants presented different explanations for choosing the sensitivity values for the pitch and for the amplitude.
-Only TODO of the participants used the same reasoning for setting the two sliders.
+Only three of the participants used the same reasoning for setting the two sliders.
+When the explanations differed, the reasoning behind the preferred pitch sensitivity was similar across different participants.
+The reasoning for the amplitude sensitivity, however, varied significantly.
+Some participants wanted the amplitude to be as controllable as possible, setting the sensitivity to lower values, whereas others set it to higher values to gain greater range.
+In general, I couldn't find a common explanation for the choice of amplitude sensitivity.
 
-TODO participants mentioned that playing the instrument felt like a physical exercise, is somewhat tedious, or made them pain over time.
-Therefore, TODO prefered to minimize effort or movement while playing.
-One participant, attempting to minimize the effort involve in large hand movement, described a completely different playing technique.
-Instead of pull and release the bands, the participant held them in constant force and change the tention by pushing the pinky against the bands.
+Three participants mentioned that playing the instrument felt like a physical exercise, is somewhat tedious, or made them pain over time.
+Therefore, two of them preferred to minimize effort or movement while playing.
+One participant, attempting to minimize the effort involve in large hand movement, described a completely different playing technique:
+Instead of pulling and releasing the bands, the participant held them in constant force and changed the tension by pushing the pinky against the bands.
 
 \section{Discussion}
 
