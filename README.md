@@ -17,7 +17,7 @@ The controller is demonstrated using a generative drum machine by mapping the st
 
 ![Schematic diagram of the system design.](report/media/diagram.png)
 
-For more technical info see the [full report](report/report.md).
+For more technical info see the [full report](http://public.tomgurion.me/schleikess-report.pdf) submitted as part of the final IDMT project.
 
 ## How to run it?
 
