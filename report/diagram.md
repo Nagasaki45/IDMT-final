@@ -6,6 +6,5 @@ graph LR
   end
   subgraph Sofware
     Arduino -- serial --> Python
-    Python -- OSC --> Wekinator
-    Wekinator -- OSC --> Pd
+    Python -- OSC --> Pd
   end
